@@ -39,7 +39,6 @@ jd_load_main_config(JuDaemon *judaemon, gchar *path)
 
 		DEBUG("Read all settings of components\n");
 
-
 		group_node = jd_conf_get_member(conf, NULL, "components", NULL);
 		if (!group_node) {
 			DEBUG("No component was defined in config\n");

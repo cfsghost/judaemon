@@ -5,12 +5,13 @@
 #include <gmodule.h>
 #include <judaemon/conf.h>
 
-typedef struct _JdWidget JdWidget;
+typedef struct _JdComponent JdComponent;
+
 struct _JdModuleClass {
 	gchar *name;
 	gchar *version;
 	gchar *description;
-	void (*constructor)(JdWidget *, JsonNode *);
+	void (*constructor)(JdComponent *, JsonNode *);
 };
 typedef struct _JdModuleClass JdModuleClass;
 
