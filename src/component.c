@@ -17,6 +17,9 @@ jd_component_new(JuDaemon *judaemon, const gchar *module_name)
 	comp = (JdComponent *)g_slice_new0(JdComponent);
 	comp->module = jd_module_find(judaemon, module_name);
 
+	/* Intial variables */
+	comp->display = judaemon->display;
+
 	return comp;
 }
 

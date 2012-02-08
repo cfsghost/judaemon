@@ -140,6 +140,7 @@ main(int argc, char *argv[])
 	judaemon = (JuDaemon *)g_slice_new(JuDaemon);
 	judaemon->modules = g_ptr_array_new();
 	judaemon->components = g_ptr_array_new();
+	judaemon->display = clutter_x11_get_default_display();
 
 	init_x11(judaemon);
 

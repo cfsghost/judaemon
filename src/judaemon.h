@@ -9,6 +9,8 @@
 
 typedef struct _JuDaemon JuDaemon;
 struct _JuDaemon {
+	Display *display;
+
 	/* XRandr Extension */
 	gint rr_major_version;
 	gint rr_minor_version;
