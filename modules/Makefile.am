@@ -1,4 +1,4 @@
-SUBDIRS = power
+SUBDIRS = power xrandr
 
 install-exec-hook:
 	rm -f $(libdir)/judaemon/*.la

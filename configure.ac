@@ -44,6 +44,7 @@ AC_OUTPUT([
   src/Makefile
   modules/Makefile
   modules/power/Makefile
+  modules/xrandr/Makefile
   data/Makefile
   po/Makefile
 ])

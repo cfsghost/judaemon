@@ -12,6 +12,7 @@ struct _JdModuleClass {
 	gchar *version;
 	gchar *description;
 	void (*constructor)(JdComponent *, JsonNode *);
+	void (*xevent_handler)(JdComponent *, XEvent *);
 };
 typedef struct _JdModuleClass JdModuleClass;
 

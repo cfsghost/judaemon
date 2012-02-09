@@ -65,7 +65,7 @@ jd_module_find_from_file(const gchar *module_name)
 
 			/* Check module name */
 			if (strcmp(module->module_class->name, module_name) == 0) {
-				DEBUG("Found Module \"%s\"\n", filename);
+				DEBUG("Found Module File \"%s\"\n", filename);
 				g_dir_close(dir);
 				g_free(fullpath);
 				return module;
@@ -91,7 +91,7 @@ jd_module_find(JuDaemon *judaemon, const gchar *module_name)
 	DEBUG("Finding Module from list\n");
 
 	/* Find from modules list */
-	for (i = 0; judaemon->modules->len; ++i) {
+	for (i = 0; i < judaemon->modules->len; ++i) {
 		module = (JdModule *)g_ptr_array_index(judaemon->modules, i);
 		if (strcmp(module->module_class->name, module_name) == 0)
 			return module;
@@ -112,4 +112,12 @@ void
 jd_module_constructor(JdComponent *comp, JsonNode *node)
 {
 	comp->module->module_class->constructor(comp, node);
+}
+
+void
+jd_module_xevent_handler(XEvent *ev, ClutterEvent *cev, JdComponent *comp)
+{
+	comp->module->module_class->xevent_handler(comp, ev);
+
+	return CLUTTER_X11_FILTER_CONTINUE;
 }
