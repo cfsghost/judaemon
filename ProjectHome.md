@@ -1,0 +1,1 @@
+A Daemon to monitor system status and handle all situation of desktop environment, which includes monitor setting, power management.
